@@ -29,7 +29,7 @@ public class DumbHttpClient {
 		InputStream is = null;
 		
 		try {
-			clientSocket = new Socket("localhost", 2019);
+			clientSocket = new Socket("www.apple.ch", 80);
 			os = clientSocket.getOutputStream();
 			is = clientSocket.getInputStream();
 

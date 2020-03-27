@@ -62,7 +62,7 @@ public class StreamingTimeServer {
         LOG.log(Level.INFO, "Starting my job... sending current time to the client for {0} ms", TEST_DURATION);
         for (int i = 0; i < NUMBER_OF_ITERATIONS; i++) {
           writer.println(String.format("{'time' : '%s'}", new Date()));
-          writer.flush();
+          writer.flush(); // IMPORTANT A ne pas oublier car un beug très courant qui bloque tout le programme
           LOG.log(Level.INFO, "Sent data to client, doing a pause...");
           Thread.sleep(PAUSE_DURATION);
         }
